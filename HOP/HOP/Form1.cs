@@ -15,7 +15,23 @@ namespace HOP
         public Form1()
         {
             InitializeComponent();
+            
         }
 
+
+        private void CleaningView_Click(object sender, EventArgs e)
+        {
+            cleaningPanel1.BringToFront();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+                Application.Exit();
+        }
+
+        private void MinimizeWindow_Click(object sender, EventArgs e)
+        {
+            Form1.ActiveForm.WindowState = FormWindowState.Minimized;
+        }
     }
 }

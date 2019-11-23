@@ -10,11 +10,15 @@ using System.Windows.Forms;
 
 namespace HOP
 {
+   
     public partial class LogInPage : UserControl
     {
+
         public LogInPage()
         {
             InitializeComponent();
         }
+
+       
     }
 }
