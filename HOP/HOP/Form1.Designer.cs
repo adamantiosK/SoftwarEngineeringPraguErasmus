@@ -29,14 +29,15 @@
         private void InitializeComponent()
         {
             this.MainPanel = new System.Windows.Forms.Panel();
+            this.MinimizeWindow = new System.Windows.Forms.Label();
+            this.CloseWindowBtn = new System.Windows.Forms.Label();
             this.adminView = new System.Windows.Forms.Button();
             this.CleaningView = new System.Windows.Forms.Button();
             this.ReceptionView = new System.Windows.Forms.Button();
             this.KitchenView = new System.Windows.Forms.Button();
-            this.CloseWindowBtn = new System.Windows.Forms.Label();
-            this.MinimizeWindow = new System.Windows.Forms.Label();
             this.logInPage1 = new HOP.LogInPage();
             this.cleaningPanel1 = new HOP.CleaningPanel();
+            this.kitchenPanel1 = new HOP.KitchenPanel();
             this.MainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,50 +56,16 @@
             this.MainPanel.Size = new System.Drawing.Size(1300, 650);
             this.MainPanel.TabIndex = 1;
             // 
-            // adminView
+            // MinimizeWindow
             // 
-            this.adminView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.adminView.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adminView.Location = new System.Drawing.Point(675, 0);
-            this.adminView.Name = "adminView";
-            this.adminView.Size = new System.Drawing.Size(219, 47);
-            this.adminView.TabIndex = 6;
-            this.adminView.Text = "Admin";
-            this.adminView.UseVisualStyleBackColor = true;
-            // 
-            // CleaningView
-            // 
-            this.CleaningView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CleaningView.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CleaningView.Location = new System.Drawing.Point(450, 0);
-            this.CleaningView.Name = "CleaningView";
-            this.CleaningView.Size = new System.Drawing.Size(219, 47);
-            this.CleaningView.TabIndex = 5;
-            this.CleaningView.Text = "Cleaning View";
-            this.CleaningView.UseVisualStyleBackColor = true;
-            this.CleaningView.Click += new System.EventHandler(this.CleaningView_Click);
-            // 
-            // ReceptionView
-            // 
-            this.ReceptionView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ReceptionView.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReceptionView.Location = new System.Drawing.Point(0, 0);
-            this.ReceptionView.Name = "ReceptionView";
-            this.ReceptionView.Size = new System.Drawing.Size(219, 47);
-            this.ReceptionView.TabIndex = 4;
-            this.ReceptionView.Text = "Reception View";
-            this.ReceptionView.UseVisualStyleBackColor = true;
-            // 
-            // KitchenView
-            // 
-            this.KitchenView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.KitchenView.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.KitchenView.Location = new System.Drawing.Point(225, 0);
-            this.KitchenView.Name = "KitchenView";
-            this.KitchenView.Size = new System.Drawing.Size(219, 47);
-            this.KitchenView.TabIndex = 1;
-            this.KitchenView.Text = "Kitchen View";
-            this.KitchenView.UseVisualStyleBackColor = true;
+            this.MinimizeWindow.AutoSize = true;
+            this.MinimizeWindow.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MinimizeWindow.Location = new System.Drawing.Point(1225, 7);
+            this.MinimizeWindow.Name = "MinimizeWindow";
+            this.MinimizeWindow.Size = new System.Drawing.Size(28, 31);
+            this.MinimizeWindow.TabIndex = 8;
+            this.MinimizeWindow.Text = "_";
+            this.MinimizeWindow.Click += new System.EventHandler(this.MinimizeWindow_Click);
             // 
             // CloseWindowBtn
             // 
@@ -111,16 +78,51 @@
             this.CloseWindowBtn.Text = "X";
             this.CloseWindowBtn.Click += new System.EventHandler(this.label1_Click);
             // 
-            // MinimizeWindow
+            // adminView
             // 
-            this.MinimizeWindow.AutoSize = true;
-            this.MinimizeWindow.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MinimizeWindow.Location = new System.Drawing.Point(1225, 7);
-            this.MinimizeWindow.Name = "MinimizeWindow";
-            this.MinimizeWindow.Size = new System.Drawing.Size(28, 31);
-            this.MinimizeWindow.TabIndex = 8;
-            this.MinimizeWindow.Text = "_";
-            this.MinimizeWindow.Click += new System.EventHandler(this.MinimizeWindow_Click);
+            this.adminView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.adminView.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminView.Location = new System.Drawing.Point(675, 0);
+            this.adminView.Name = "adminView";
+            this.adminView.Size = new System.Drawing.Size(219, 41);
+            this.adminView.TabIndex = 6;
+            this.adminView.Text = "Admin";
+            this.adminView.UseVisualStyleBackColor = true;
+            // 
+            // CleaningView
+            // 
+            this.CleaningView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CleaningView.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CleaningView.Location = new System.Drawing.Point(450, 0);
+            this.CleaningView.Name = "CleaningView";
+            this.CleaningView.Size = new System.Drawing.Size(219, 41);
+            this.CleaningView.TabIndex = 5;
+            this.CleaningView.Text = "Cleaning View";
+            this.CleaningView.UseVisualStyleBackColor = true;
+            this.CleaningView.Click += new System.EventHandler(this.CleaningView_Click);
+            // 
+            // ReceptionView
+            // 
+            this.ReceptionView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ReceptionView.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReceptionView.Location = new System.Drawing.Point(0, 0);
+            this.ReceptionView.Name = "ReceptionView";
+            this.ReceptionView.Size = new System.Drawing.Size(219, 41);
+            this.ReceptionView.TabIndex = 4;
+            this.ReceptionView.Text = "Reception View";
+            this.ReceptionView.UseVisualStyleBackColor = true;
+            // 
+            // KitchenView
+            // 
+            this.KitchenView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.KitchenView.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.KitchenView.Location = new System.Drawing.Point(225, 0);
+            this.KitchenView.Name = "KitchenView";
+            this.KitchenView.Size = new System.Drawing.Size(219, 41);
+            this.KitchenView.TabIndex = 1;
+            this.KitchenView.Text = "Kitchen View";
+            this.KitchenView.UseVisualStyleBackColor = true;
+            this.KitchenView.Click += new System.EventHandler(this.KitchenView_Click);
             // 
             // logInPage1
             // 
@@ -138,6 +140,14 @@
             this.cleaningPanel1.Size = new System.Drawing.Size(1300, 600);
             this.cleaningPanel1.TabIndex = 2;
             // 
+            // kitchenPanel1
+            // 
+            this.kitchenPanel1.BackColor = System.Drawing.Color.Teal;
+            this.kitchenPanel1.Location = new System.Drawing.Point(1, 52);
+            this.kitchenPanel1.Name = "kitchenPanel1";
+            this.kitchenPanel1.Size = new System.Drawing.Size(1300, 600);
+            this.kitchenPanel1.TabIndex = 9;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -145,6 +155,7 @@
             this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(1300, 650);
             this.Controls.Add(this.MainPanel);
+            this.Controls.Add(this.kitchenPanel1);
             this.ForeColor = System.Drawing.Color.FloralWhite;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
@@ -168,6 +179,7 @@
         private LogInPage logInPage1;
         private System.Windows.Forms.Label CloseWindowBtn;
         private System.Windows.Forms.Label MinimizeWindow;
+        private KitchenPanel kitchenPanel1;
     }
 }
 

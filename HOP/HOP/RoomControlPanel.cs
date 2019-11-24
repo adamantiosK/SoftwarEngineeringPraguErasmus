@@ -75,6 +75,8 @@ namespace HOP
         private void JoinRoomBtn_Click(object sender, EventArgs e)
         {
            this.BackColor = Color.Yellow;
+           int no = int.Parse(ActiveNumberLbl.Text);
+           ActiveNumberLbl.Text = (no + 1).ToString();
         }
 
         private void DoneBtn_Click(object sender, EventArgs e)

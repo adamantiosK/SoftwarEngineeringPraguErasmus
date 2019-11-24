@@ -22,6 +22,7 @@ namespace HOP
         private void CleaningView_Click(object sender, EventArgs e)
         {
             cleaningPanel1.BringToFront();
+            kitchenPanel1.SendToBack();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -32,6 +33,12 @@ namespace HOP
         private void MinimizeWindow_Click(object sender, EventArgs e)
         {
             Form1.ActiveForm.WindowState = FormWindowState.Minimized;
+        }
+
+        private void KitchenView_Click(object sender, EventArgs e)
+        {
+            kitchenPanel1.BringToFront();
+            cleaningPanel1.SendToBack();
         }
     }
 }
