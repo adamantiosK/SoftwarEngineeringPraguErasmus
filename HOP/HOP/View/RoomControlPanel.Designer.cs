@@ -36,12 +36,13 @@
             this.Service2Lbl = new System.Windows.Forms.Label();
             this.Service3Lbl = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.WorkerIdTxtBox = new System.Windows.Forms.TextBox();
             this.JoinRoomBtn = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.DoneBtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.ActiveNumberLbl = new System.Windows.Forms.Label();
+            this.messageLbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // NoLbl
@@ -128,21 +129,22 @@
             this.panel2.Size = new System.Drawing.Size(5, 95);
             this.panel2.TabIndex = 3;
             // 
-            // textBox1
+            // WorkerIdTxtBox
             // 
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(717, 22);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(215, 30);
-            this.textBox1.TabIndex = 7;
+            this.WorkerIdTxtBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WorkerIdTxtBox.Location = new System.Drawing.Point(717, 15);
+            this.WorkerIdTxtBox.Multiline = true;
+            this.WorkerIdTxtBox.Name = "WorkerIdTxtBox";
+            this.WorkerIdTxtBox.PasswordChar = '*';
+            this.WorkerIdTxtBox.Size = new System.Drawing.Size(215, 30);
+            this.WorkerIdTxtBox.TabIndex = 7;
             // 
             // JoinRoomBtn
             // 
             this.JoinRoomBtn.BackColor = System.Drawing.Color.Aquamarine;
             this.JoinRoomBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.JoinRoomBtn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.JoinRoomBtn.Location = new System.Drawing.Point(717, 59);
+            this.JoinRoomBtn.Location = new System.Drawing.Point(717, 52);
             this.JoinRoomBtn.Name = "JoinRoomBtn";
             this.JoinRoomBtn.Size = new System.Drawing.Size(215, 34);
             this.JoinRoomBtn.TabIndex = 8;
@@ -164,9 +166,9 @@
             this.DoneBtn.BackColor = System.Drawing.Color.Aquamarine;
             this.DoneBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DoneBtn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DoneBtn.Location = new System.Drawing.Point(988, 22);
+            this.DoneBtn.Location = new System.Drawing.Point(991, 13);
             this.DoneBtn.Name = "DoneBtn";
-            this.DoneBtn.Size = new System.Drawing.Size(242, 71);
+            this.DoneBtn.Size = new System.Drawing.Size(242, 73);
             this.DoneBtn.TabIndex = 9;
             this.DoneBtn.Text = "Done With Room ";
             this.DoneBtn.UseVisualStyleBackColor = false;
@@ -177,7 +179,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(626, 29);
+            this.label2.Location = new System.Drawing.Point(626, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 23);
             this.label2.TabIndex = 10;
@@ -188,23 +190,34 @@
             this.ActiveNumberLbl.AutoSize = true;
             this.ActiveNumberLbl.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ActiveNumberLbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ActiveNumberLbl.Location = new System.Drawing.Point(639, 58);
+            this.ActiveNumberLbl.Location = new System.Drawing.Point(639, 51);
             this.ActiveNumberLbl.Name = "ActiveNumberLbl";
             this.ActiveNumberLbl.Size = new System.Drawing.Size(30, 34);
             this.ActiveNumberLbl.TabIndex = 11;
             this.ActiveNumberLbl.Text = "0";
+            // 
+            // messageLbl
+            // 
+            this.messageLbl.AutoSize = true;
+            this.messageLbl.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.messageLbl.ForeColor = System.Drawing.Color.Maroon;
+            this.messageLbl.Location = new System.Drawing.Point(641, 89);
+            this.messageLbl.Name = "messageLbl";
+            this.messageLbl.Size = new System.Drawing.Size(0, 23);
+            this.messageLbl.TabIndex = 12;
             // 
             // RoomControlPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
+            this.Controls.Add(this.messageLbl);
             this.Controls.Add(this.ActiveNumberLbl);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.DoneBtn);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.JoinRoomBtn);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.WorkerIdTxtBox);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.Service3Lbl);
             this.Controls.Add(this.Service2Lbl);
@@ -229,11 +242,12 @@
         private System.Windows.Forms.Label Service2Lbl;
         private System.Windows.Forms.Label Service3Lbl;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox WorkerIdTxtBox;
         private System.Windows.Forms.Button JoinRoomBtn;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button DoneBtn;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label ActiveNumberLbl;
+        private System.Windows.Forms.Label messageLbl;
     }
 }

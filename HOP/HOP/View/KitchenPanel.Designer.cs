@@ -31,7 +31,6 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.KitchenLive = new System.Windows.Forms.Button();
-            this.CleanGreenBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +46,6 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkSlateGray;
             this.panel1.Controls.Add(this.KitchenLive);
-            this.panel1.Controls.Add(this.CleanGreenBtn);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1300, 29);
@@ -57,25 +55,13 @@
             // 
             this.KitchenLive.BackColor = System.Drawing.Color.Red;
             this.KitchenLive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.KitchenLive.Location = new System.Drawing.Point(161, -1);
+            this.KitchenLive.Location = new System.Drawing.Point(0, -1);
             this.KitchenLive.Name = "KitchenLive";
             this.KitchenLive.Size = new System.Drawing.Size(164, 27);
             this.KitchenLive.TabIndex = 3;
             this.KitchenLive.Text = "Kitchen Live";
             this.KitchenLive.UseVisualStyleBackColor = false;
             this.KitchenLive.Click += new System.EventHandler(this.RefreshRooms_Click);
-            // 
-            // CleanGreenBtn
-            // 
-            this.CleanGreenBtn.BackColor = System.Drawing.Color.SeaGreen;
-            this.CleanGreenBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CleanGreenBtn.Location = new System.Drawing.Point(0, -1);
-            this.CleanGreenBtn.Name = "CleanGreenBtn";
-            this.CleanGreenBtn.Size = new System.Drawing.Size(164, 27);
-            this.CleanGreenBtn.TabIndex = 2;
-            this.CleanGreenBtn.Text = "Clean Green";
-            this.CleanGreenBtn.UseVisualStyleBackColor = false;
-            this.CleanGreenBtn.Click += new System.EventHandler(this.CleanGreenBtn_Click);
             // 
             // KitchenPanel
             // 
@@ -96,6 +82,5 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button KitchenLive;
-        private System.Windows.Forms.Button CleanGreenBtn;
     }
 }

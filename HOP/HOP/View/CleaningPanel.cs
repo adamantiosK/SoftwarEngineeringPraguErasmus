@@ -15,10 +15,9 @@ namespace HOP
         public CleaningPanel()
         {
             InitializeComponent();
-            PopulateItems();
         }
 
-        private void PopulateItems()
+        private void PopulateItems(int amount)
         {
             if (flowLayoutPanel1.Controls.Count != 0)
             {
@@ -26,7 +25,7 @@ namespace HOP
 
             }
 
-            RoomControlPanel[] listitems = new RoomControlPanel[12];
+            RoomControlPanel[] listitems = new RoomControlPanel[amount];
 
             for (int i = 0; i < listitems.Length; i++)
             {
@@ -50,25 +49,11 @@ namespace HOP
             }
         }
 
-        private void CleanGreenBtn_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < flowLayoutPanel1.Controls.Count; i++)
-            {
-                if (flowLayoutPanel1.Controls.Count != 0)
-                {
-                    if (flowLayoutPanel1.Controls[i].BackColor == Color.Green)
-                    {
-                        flowLayoutPanel1.Controls.Remove(flowLayoutPanel1.Controls[i]);
-                        i--;
-                    }
-                }
-
-            }
-        }
 
         private void RefreshRooms_Click(object sender, EventArgs e)
         {
-            PopulateItems();
+
+            PopulateItems(12);
         }
     }
 }

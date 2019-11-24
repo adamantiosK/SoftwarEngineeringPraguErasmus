@@ -19,7 +19,6 @@ namespace HOP
         public KitchenPanel()
         {
             InitializeComponent();
-            PopulateItems();
         }
 
 
@@ -34,10 +33,10 @@ namespace HOP
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            PopulateItems();
+            PopulateItems(12);
         }
 
-        private void PopulateItems()
+        private void PopulateItems(int Amount)
         {
             if (flowLayoutPanel1.Controls.Count != 0)
             {
@@ -45,7 +44,7 @@ namespace HOP
 
             }
 
-            KitchenOrder[] listitems = new KitchenOrder[12];
+            KitchenOrder[] listitems = new KitchenOrder[Amount];
 
             for (int i = 0; i < listitems.Length; i++)
             {
@@ -67,21 +66,6 @@ namespace HOP
             }
         }
 
-        private void CleanGreenBtn_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < flowLayoutPanel1.Controls.Count; i++)
-            {
-                if (flowLayoutPanel1.Controls.Count != 0)
-                {
-                    if (flowLayoutPanel1.Controls[i].BackColor == Color.Green)
-                    {
-                        flowLayoutPanel1.Controls.Remove(flowLayoutPanel1.Controls[i]);
-                        i--;
-                    }
-                }
-
-            }
-        }
 
         private void RefreshRooms_Click(object sender, EventArgs e)
         {
