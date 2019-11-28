@@ -22,3 +22,22 @@ C:\Users\Adam's MSI\Desktop\Prototype\HOP\HOP\obj\Debug\HOP.csprojAssemblyRefere
 C:\Users\Adam's MSI\Desktop\Prototype\HOP\HOP\obj\Debug\HOP.KitchenPanel.resources
 C:\Users\Adam's MSI\Desktop\Prototype\HOP\HOP\obj\Debug\HOP.ReceptionPanel.resources
 C:\Users\Adam's MSI\Desktop\Prototype\HOP\HOP\obj\Debug\HOP.KitchenOrder.resources
+C:\Users\Adam's MSI\Desktop\Prague CVUT\CVUT Classes\Software Engineering\Prototype\HOP\HOP\bin\Debug\HOP.exe.config
+C:\Users\Adam's MSI\Desktop\Prague CVUT\CVUT Classes\Software Engineering\Prototype\HOP\HOP\bin\Debug\HOP.exe
+C:\Users\Adam's MSI\Desktop\Prague CVUT\CVUT Classes\Software Engineering\Prototype\HOP\HOP\bin\Debug\HOP.pdb
+C:\Users\Adam's MSI\Desktop\Prague CVUT\CVUT Classes\Software Engineering\Prototype\HOP\HOP\obj\Debug\HOP.csprojAssemblyReference.cache
+C:\Users\Adam's MSI\Desktop\Prague CVUT\CVUT Classes\Software Engineering\Prototype\HOP\HOP\obj\Debug\HOP.CleaningPanel.resources
+C:\Users\Adam's MSI\Desktop\Prague CVUT\CVUT Classes\Software Engineering\Prototype\HOP\HOP\obj\Debug\HOP.Form1.resources
+C:\Users\Adam's MSI\Desktop\Prague CVUT\CVUT Classes\Software Engineering\Prototype\HOP\HOP\obj\Debug\HOP.KitchenOrder.resources
+C:\Users\Adam's MSI\Desktop\Prague CVUT\CVUT Classes\Software Engineering\Prototype\HOP\HOP\obj\Debug\HOP.KitchenPanel.resources
+C:\Users\Adam's MSI\Desktop\Prague CVUT\CVUT Classes\Software Engineering\Prototype\HOP\HOP\obj\Debug\HOP.LogInPage.resources
+C:\Users\Adam's MSI\Desktop\Prague CVUT\CVUT Classes\Software Engineering\Prototype\HOP\HOP\obj\Debug\HOP.Properties.Resources.resources
+C:\Users\Adam's MSI\Desktop\Prague CVUT\CVUT Classes\Software Engineering\Prototype\HOP\HOP\obj\Debug\HOP.ReceptionPanel.resources
+C:\Users\Adam's MSI\Desktop\Prague CVUT\CVUT Classes\Software Engineering\Prototype\HOP\HOP\obj\Debug\HOP.RoomControlPanel.resources
+C:\Users\Adam's MSI\Desktop\Prague CVUT\CVUT Classes\Software Engineering\Prototype\HOP\HOP\obj\Debug\HOP.csproj.GenerateResource.cache
+C:\Users\Adam's MSI\Desktop\Prague CVUT\CVUT Classes\Software Engineering\Prototype\HOP\HOP\obj\Debug\HOP.exe
+C:\Users\Adam's MSI\Desktop\Prague CVUT\CVUT Classes\Software Engineering\Prototype\HOP\HOP\obj\Debug\HOP.pdb
+C:\Users\Adam's MSI\Desktop\Prague CVUT\CVUT Classes\Software Engineering\Prototype\HOP\HOP\bin\Debug\HOP.exe.manifest
+C:\Users\Adam's MSI\Desktop\Prague CVUT\CVUT Classes\Software Engineering\Prototype\HOP\HOP\bin\Debug\HOP.application
+C:\Users\Adam's MSI\Desktop\Prague CVUT\CVUT Classes\Software Engineering\Prototype\HOP\HOP\obj\Debug\HOP.exe.manifest
+C:\Users\Adam's MSI\Desktop\Prague CVUT\CVUT Classes\Software Engineering\Prototype\HOP\HOP\obj\Debug\HOP.application

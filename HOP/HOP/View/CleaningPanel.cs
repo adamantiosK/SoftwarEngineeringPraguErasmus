@@ -22,8 +22,16 @@ namespace HOP
             InitializeComponent();
         }
 
-        private void PopulateItems(int amount)
+        private void PopulateItems()
         {
+
+            DataSet data = GetDataFromDatabase();
+
+            int amount = data.Tables[0].Rows.Count;
+
+
+
+
             if (flowLayoutPanel1.Controls.Count != 0)
             {
                 flowLayoutPanel1.Controls.Clear();
@@ -36,7 +44,7 @@ namespace HOP
             {
                 listItems[i] = new RoomControlPanel
                 {
-                    RoomNumber = (i + 1).ToString(),
+                    RoomNumber = data.Tables[0].Rows[i]["id"].ToString(),
                     Services1 = "Tower Change",
                     Services2 = "Sheets Change",
                     Services3 = "Clean Up"
@@ -55,10 +63,26 @@ namespace HOP
         }
 
 
-        private void GetDataFromDatabase()
+        private DataSet GetDataFromDatabase()
         {
+
+            System.Data.DataTable table = new DataTable("ParentTable");
+            DataColumn column;
+            DataRow row;
+            column = new DataColumn();
+            column.ColumnName = "id";
+            column = new DataColumn();
+            column.ColumnName = "State";
+
+
+            // Instantiate the DataSet variable.
+            DataSet dataSet = new DataSet();
+            // Add the new DataTable to the DataSet.
+            dataSet.Tables.Add(table);
+
+
             string queryString =
-                "SELECT Rooms,Services, State FROM dbo.ROOMS;";
+                "SELECT RoomID, State FROM dbo.Room;";
             using (SqlConnection connection = new SqlConnection(
                 _connectionString))
             {
@@ -66,32 +90,39 @@ namespace HOP
                     queryString, connection);
                 connection.Open();
                 SqlDataReader reader = command.ExecuteReader();
+                int y = 0;
+
                 try
                 {
                     while (reader.Read())
                     {
-                        //Retrives only information for rooms either not done or in progress of the day;
-
-                        //  String that holds Room Number(Convert.ToStrint(reader[0]));
-                        //  String that holds services to be done(Convert.ToStrint(reader[1]));
-                        //in case int is >0 than turn state ( color ) to in progress 
-                        //  String that returns int of people working on the application(Convert.ToStrint(reader[2]));
+                        string RoomID = (Convert.ToString(reader[0]));
+                        string RoomState = (Convert.ToString(reader[1]));
+                   
+                        row = table.NewRow();
+                        row["id"] = RoomID;
+                        row["State"] = RoomState;
+                        y++;
                     }
                 }
                 finally
                 {
                     reader.Close();
                 }
+
                 connection.Close();
             }
+
+            return dataSet;
+
         }
 
 
 
         private void RefreshRooms_Click(object sender, EventArgs e)
         {
-
-            PopulateItems(12);
+            PopulateItems();
         }
     }
+
 }
