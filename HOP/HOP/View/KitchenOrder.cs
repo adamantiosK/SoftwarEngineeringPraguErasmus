@@ -20,7 +20,6 @@ namespace HOP
         #region Properties 
         private string _orderNumber;
         private string _OrderDetails;
-        private Button _DoneButton;
 
 
 

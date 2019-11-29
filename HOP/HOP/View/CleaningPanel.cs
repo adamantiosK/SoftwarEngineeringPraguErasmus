@@ -14,9 +14,9 @@ namespace HOP
     public partial class CleaningPanel : UserControl
     {
 
-        private readonly string _connectionString = "";
+        private readonly string _connectionString = "Server=localhost;Database=SoftwareEngineering;Trusted_Connection=True;";
 
-
+        private List<String> Cleaners = new List<String>();
         public CleaningPanel()
         {
             InitializeComponent();
@@ -30,16 +30,14 @@ namespace HOP
             int amount = data.Tables[0].Rows.Count;
 
 
-
-
             if (flowLayoutPanel1.Controls.Count != 0)
             {
                 flowLayoutPanel1.Controls.Clear();
-
+                
             }
 
             RoomControlPanel[] listItems = new RoomControlPanel[amount];
-
+            
             for (int i = 0; i < listItems.Length; i++)
             {
                 listItems[i] = new RoomControlPanel
@@ -47,7 +45,10 @@ namespace HOP
                     RoomNumber = data.Tables[0].Rows[i]["id"].ToString(),
                     Services1 = "Tower Change",
                     Services2 = "Sheets Change",
-                    Services3 = "Clean Up"
+                    Services3 = "Clean Up",
+                    Status = data.Tables[0].Rows[i]["State"].ToString(),
+                    NumberWorking = data.Tables[0].Rows[i]["Number"].ToString(),
+                    Cleaners = this.Cleaners
                 };
                 if (flowLayoutPanel1.Controls.Count < 0)
                 {
@@ -66,55 +67,70 @@ namespace HOP
         private DataSet GetDataFromDatabase()
         {
 
-            System.Data.DataTable table = new DataTable("ParentTable");
-            DataColumn column;
-            DataRow row;
-            column = new DataColumn();
-            column.ColumnName = "id";
-            column = new DataColumn();
-            column.ColumnName = "State";
+
+            DataTable table = new DataTable
+            {
+                Columns = { "Id", "State","Number" },
+            };
 
 
             // Instantiate the DataSet variable.
             DataSet dataSet = new DataSet();
             // Add the new DataTable to the DataSet.
             dataSet.Tables.Add(table);
+            Cleaners.Clear();
 
+            string queryString1 =
+                "SELECT TOP (1000) [RoomID],[State],[Number] FROM[SoftwareEngineering].[dbo].[Room] WHERE[State] = 'notdone' OR[State] = 'InProgress'";
+            string queryString2 =
+                "SELECT TOP (1000) [CleaningStaffID]FROM[SoftwareEngineering].[dbo].[CleaningStaff]";
 
-            string queryString =
-                "SELECT RoomID, State FROM dbo.Room;";
             using (SqlConnection connection = new SqlConnection(
                 _connectionString))
             {
-                SqlCommand command = new SqlCommand(
-                    queryString, connection);
+                SqlCommand command1 = new SqlCommand(
+                    queryString1, connection);
+                SqlCommand command2 = new SqlCommand(
+                    queryString2, connection);
                 connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
-                int y = 0;
+                SqlDataReader reader1= command1.ExecuteReader();
+               
 
                 try
                 {
-                    while (reader.Read())
+                    while (reader1.Read())
                     {
-                        string RoomID = (Convert.ToString(reader[0]));
-                        string RoomState = (Convert.ToString(reader[1]));
-                   
-                        row = table.NewRow();
-                        row["id"] = RoomID;
-                        row["State"] = RoomState;
-                        y++;
+                        string RoomID = (Convert.ToString(reader1[0]));
+                        string RoomState = (Convert.ToString(reader1[1]));
+                        string Number = (Convert.ToString(reader1[2]));
+
+                       table.Rows.Add( RoomID, RoomState, Number);
+
                     }
                 }
                 finally
                 {
-                    reader.Close();
-                }
+                    reader1.Close();
 
+                }
+                SqlDataReader reader2 = command2.ExecuteReader();
+                try
+                {
+                    while (reader2.Read())
+                    {
+                        Console.WriteLine(Convert.ToString(reader2[0]));
+
+                        Cleaners.Add(Convert.ToString(reader2[0]));
+                    }
+                }
+                finally
+                {
+                    reader2.Close();
+
+                }
                 connection.Close();
             }
-
             return dataSet;
-
         }
 
 
