@@ -38,6 +38,7 @@
             this.logInPage1 = new HOP.LogInPage();
             this.cleaningPanel1 = new HOP.CleaningPanel();
             this.kitchenPanel1 = new HOP.KitchenPanel();
+            this.receptionPanel1 = new HOP.ReceptionPanel();
             this.MainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,6 +52,7 @@
             this.MainPanel.Controls.Add(this.KitchenView);
             this.MainPanel.Controls.Add(this.logInPage1);
             this.MainPanel.Controls.Add(this.cleaningPanel1);
+            this.MainPanel.Controls.Add(this.receptionPanel1);
             this.MainPanel.Location = new System.Drawing.Point(1, -1);
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Size = new System.Drawing.Size(1300, 650);
@@ -111,6 +113,7 @@
             this.ReceptionView.TabIndex = 4;
             this.ReceptionView.Text = "Reception View";
             this.ReceptionView.UseVisualStyleBackColor = true;
+            this.ReceptionView.Click += new System.EventHandler(this.ReceptionView_Click);
             // 
             // KitchenView
             // 
@@ -148,6 +151,14 @@
             this.kitchenPanel1.Size = new System.Drawing.Size(1300, 600);
             this.kitchenPanel1.TabIndex = 9;
             // 
+            // receptionPanel1
+            // 
+            this.receptionPanel1.BackColor = System.Drawing.Color.Teal;
+            this.receptionPanel1.Location = new System.Drawing.Point(0, 50);
+            this.receptionPanel1.Name = "receptionPanel1";
+            this.receptionPanel1.Size = new System.Drawing.Size(1300, 600);
+            this.receptionPanel1.TabIndex = 9;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -180,6 +191,7 @@
         private System.Windows.Forms.Label CloseWindowBtn;
         private System.Windows.Forms.Label MinimizeWindow;
         private KitchenPanel kitchenPanel1;
+        private ReceptionPanel receptionPanel1;
     }
 }
 

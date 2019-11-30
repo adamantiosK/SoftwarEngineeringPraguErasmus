@@ -104,6 +104,7 @@ namespace HOP
 
         private void JoinRoomBtn_Click(object sender, EventArgs e)
         {
+
             if (this.BackColor == Color.Green)
             {
                 messageLbl.Text = "Room Alredy in Cleaned State";
@@ -133,6 +134,7 @@ namespace HOP
                 {
                     messageLbl.Text = "";
                     messageLbl.Text = "Error occurred";
+                    WorkerIdTxtBox.Text = "";
                 }
             }
 
@@ -152,6 +154,7 @@ namespace HOP
 
             return false;
         }
+
 
         private void DoneBtn_Click(object sender, EventArgs e)
         {

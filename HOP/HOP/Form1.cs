@@ -12,7 +12,6 @@ namespace HOP
 {
     public partial class Form1 : Form
     {
-
         public readonly string _connectionString = "Server=localhost;Database=SoftwareEngineering;Trusted_Connection=True;";
 
 
@@ -22,12 +21,6 @@ namespace HOP
             
         }
 
-
-        private void CleaningView_Click(object sender, EventArgs e)
-        {
-            cleaningPanel1.BringToFront();
-            kitchenPanel1.SendToBack();
-        }
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -43,6 +36,21 @@ namespace HOP
         {
             kitchenPanel1.BringToFront();
             cleaningPanel1.SendToBack();
+            receptionPanel1.SendToBack();
+        }
+
+        private void ReceptionView_Click(object sender, EventArgs e)
+        {
+            receptionPanel1.BringToFront();
+            kitchenPanel1.SendToBack();
+            cleaningPanel1.SendToBack();
+        }
+
+        private void CleaningView_Click(object sender, EventArgs e)
+        {
+            cleaningPanel1.BringToFront();
+            kitchenPanel1.SendToBack();
+            receptionPanel1.SendToBack();
         }
     }
 }

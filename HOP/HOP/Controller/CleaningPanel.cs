@@ -17,7 +17,6 @@ namespace HOP
         private readonly string _connectionString = "Server=localhost;Database=SoftwareEngineering;Trusted_Connection=True;";
 
 
-
         private List<String> Cleaners = new List<String>();
         public CleaningPanel()
         {
@@ -26,7 +25,6 @@ namespace HOP
 
         private void PopulateItems()
         {
-
             DataSet data = GetDataFromDatabase();
 
             int amount = data.Tables[0].Rows.Count;
@@ -65,6 +63,7 @@ namespace HOP
             }
         }
 
+      
 
         private DataSet GetDataFromDatabase()
         {
