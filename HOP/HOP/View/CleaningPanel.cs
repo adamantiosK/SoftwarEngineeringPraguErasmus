@@ -16,6 +16,8 @@ namespace HOP
 
         private readonly string _connectionString = "Server=localhost;Database=SoftwareEngineering;Trusted_Connection=True;";
 
+
+
         private List<String> Cleaners = new List<String>();
         public CleaningPanel()
         {

@@ -14,12 +14,12 @@ namespace HOP
 {
     public partial class RoomControlPanel : UserControl
     {
+        private readonly string _connectionString = "Server=localhost;Database=SoftwareEngineering;Trusted_Connection=True;";
 
         public RoomControlPanel()
         {
             InitializeComponent();
         }
-
 
         #region Properties 
         private string _roomNumber;
@@ -138,7 +138,6 @@ namespace HOP
 
         }
 
-
         private bool IsWorker(String id)
         {
             for (int i = 0; i < Cleaners.Count; i++)
@@ -153,8 +152,6 @@ namespace HOP
 
             return false;
         }
-
-
 
         private void DoneBtn_Click(object sender, EventArgs e)
         {
@@ -185,10 +182,8 @@ namespace HOP
             }
         }
 
-      
         private void ParseToDatabaseForDone(string roomNumber)
         {
-            string _connectionString = "Server=localhost;Database=SoftwareEngineering;Trusted_Connection=True;";
             string queryString =
                 "UPDATE dbo.Room SET[State] = 'Done' WHERE RoomID = " + roomNumber;
             using (SqlConnection connection = new SqlConnection(
@@ -202,24 +197,14 @@ namespace HOP
             }
         }
 
-
-
-
-
         private void ParseToDatabaseForInProgress(string ActiveNumber, string roomNumber)
         {
-
-            string _connectionString = "Server=localhost;Database=SoftwareEngineering;Trusted_Connection=True;";
-
-
             string queryString1 =
                 "UPDATE dbo.Room SET[State] = 'InProgress' WHERE RoomID = " + roomNumber;
-
             string queryString2 =
                 "UPDATE dbo.Room SET[Number] = '" + ActiveNumber + "' WHERE RoomID = " + roomNumber;
             using (SqlConnection connection = new SqlConnection(
                 _connectionString))
-
             {
                 SqlCommand command1 = new SqlCommand(
                     queryString1, connection);

@@ -12,6 +12,10 @@ namespace HOP
 {
     public partial class Form1 : Form
     {
+
+        public readonly string _connectionString = "Server=localhost;Database=SoftwareEngineering;Trusted_Connection=True;";
+
+
         public Form1()
         {
             InitializeComponent();
