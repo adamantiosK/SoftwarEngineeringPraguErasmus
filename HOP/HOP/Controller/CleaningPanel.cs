@@ -8,16 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using HOP.Model;
 
 namespace HOP
 {
     public partial class CleaningPanel : UserControl
     {
 
-        private readonly string _connectionString = "Server=localhost;Database=SoftwareEngineering;Trusted_Connection=True;";
-
-
-        private List<String> Cleaners = new List<String>();
+        private CleaningStaff _cleaner ;
+        private List<CleaningStaff> _cleaners = new List<CleaningStaff>();
         public CleaningPanel()
         {
             InitializeComponent();
@@ -25,30 +24,26 @@ namespace HOP
 
         private void PopulateItems()
         {
-            DataSet data = GetDataFromDatabase();
-
-            int amount = data.Tables[0].Rows.Count;
-
-
+            List<Room> rooms = GetDataFromDatabase();
+            int amount = rooms.Count;
             if (flowLayoutPanel1.Controls.Count != 0)
             {
                 flowLayoutPanel1.Controls.Clear();
-                
             }
 
             RoomControlPanel[] listItems = new RoomControlPanel[amount];
-            
+
             for (int i = 0; i < listItems.Length; i++)
             {
                 listItems[i] = new RoomControlPanel
                 {
-                    RoomNumber = data.Tables[0].Rows[i]["id"].ToString(),
-                    Services1 = "Tower Change",
+                    RoomNumber = rooms[i].GetRoomID,
+                    Services1 = "Towel Change",
                     Services2 = "Sheets Change",
                     Services3 = "Clean Up",
-                    Status = data.Tables[0].Rows[i]["State"].ToString(),
-                    NumberWorking = data.Tables[0].Rows[i]["Number"].ToString(),
-                    Cleaners = this.Cleaners
+                    Status = rooms[i].GetState,
+                    NumberWorking = rooms[i].GetNumber,
+                    Cleaners = _cleaner.ReturnIDList(_cleaners)
                 };
                 if (flowLayoutPanel1.Controls.Count < 0)
                 {
@@ -63,40 +58,25 @@ namespace HOP
             }
         }
 
-      
 
-        private DataSet GetDataFromDatabase()
+        private List<Room> GetDataFromDatabase()
         {
-
-
-            DataTable table = new DataTable
-            {
-                Columns = { "Id", "State","Number" },
-            };
-
-
-            // Instantiate the DataSet variable.
-            DataSet dataSet = new DataSet();
-            // Add the new DataTable to the DataSet.
-            dataSet.Tables.Add(table);
-            Cleaners.Clear();
+            List<Room> rooms = new List<Room>();
 
             string queryString1 =
-                "SELECT TOP (1000) [RoomID],[State],[Number] FROM[SoftwareEngineering].[dbo].[Room] WHERE[State] = 'notdone' OR[State] = 'InProgress'";
-            string queryString2 =
-                "SELECT TOP (1000) [CleaningStaffID]FROM[SoftwareEngineering].[dbo].[CleaningStaff]";
+                "SELECT TOP(1000) RoomNumber , CleaningStatus , NumberOfCleaners FROM Room WHERE CleaningStatus = 'notdone' OR CleaningStatus = 'InProgress'";
+            string queryString2 = "SELECT TOP(1000) [CleaningStaffID] FROM[DB_A5088F_HOTELdb].[dbo].[CleaningStaff]";
 
             using (SqlConnection connection = new SqlConnection(
-                _connectionString))
+                Form1._connectionString))
             {
                 SqlCommand command1 = new SqlCommand(
                     queryString1, connection);
                 SqlCommand command2 = new SqlCommand(
                     queryString2, connection);
                 connection.Open();
-                SqlDataReader reader1= command1.ExecuteReader();
-               
-
+                SqlDataReader reader1 = command1.ExecuteReader();
+                
                 try
                 {
                     while (reader1.Read())
@@ -105,33 +85,33 @@ namespace HOP
                         string RoomState = (Convert.ToString(reader1[1]));
                         string Number = (Convert.ToString(reader1[2]));
 
-                       table.Rows.Add( RoomID, RoomState, Number);
-
+                        Room room1 = new Room(RoomID, RoomState, Number);
+                        rooms.Add(room1);
                     }
                 }
                 finally
                 {
                     reader1.Close();
-
                 }
+
                 SqlDataReader reader2 = command2.ExecuteReader();
                 try
                 {
                     while (reader2.Read())
                     {
-                        Console.WriteLine(Convert.ToString(reader2[0]));
+                        _cleaner = new CleaningStaff(Convert.ToInt16(reader2[0]));
+                        _cleaners.Add(_cleaner);
 
-                        Cleaners.Add(Convert.ToString(reader2[0]));
                     }
                 }
                 finally
                 {
                     reader2.Close();
-
                 }
+
                 connection.Close();
             }
-            return dataSet;
+            return rooms;
         }
 
 
@@ -141,5 +121,4 @@ namespace HOP
             PopulateItems();
         }
     }
-
 }

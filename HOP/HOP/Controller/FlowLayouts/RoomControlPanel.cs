@@ -14,8 +14,6 @@ namespace HOP
 {
     public partial class RoomControlPanel : UserControl
     {
-        private readonly string _connectionString = "Server=localhost;Database=SoftwareEngineering;Trusted_Connection=True;";
-
         public RoomControlPanel()
         {
             InitializeComponent();
@@ -112,10 +110,6 @@ namespace HOP
             }
             else
             {
-                for (int i = 0; i < Cleaners.Count; i++)
-                {
-                    Console.WriteLine(Cleaners[i]);
-                }
 
                 if (WorkerIdTxtBox.Text != "" && IsWorker(WorkerIdTxtBox.Text) == true)
                 {
@@ -160,7 +154,7 @@ namespace HOP
         {
             if (this.BackColor == Color.Green)
             {
-                messageLbl.Text = "Room Alredy in Cleaned State";
+                messageLbl.Text = "Room Already in Cleaned State";
                 WorkerIdTxtBox.Text = "";
             }
             else
@@ -188,9 +182,9 @@ namespace HOP
         private void ParseToDatabaseForDone(string roomNumber)
         {
             string queryString =
-                "UPDATE dbo.Room SET[State] = 'Done' WHERE RoomID = " + roomNumber;
+                "UPDATE dbo.Room SET CleaningStatus = 'DONE' WHERE RoomNumber = " + roomNumber;
             using (SqlConnection connection = new SqlConnection(
-                _connectionString))
+                Form1._connectionString))
             {
                 SqlCommand command = new SqlCommand(
                     queryString, connection);
@@ -203,11 +197,11 @@ namespace HOP
         private void ParseToDatabaseForInProgress(string ActiveNumber, string roomNumber)
         {
             string queryString1 =
-                "UPDATE dbo.Room SET[State] = 'InProgress' WHERE RoomID = " + roomNumber;
+                "UPDATE dbo.Room SET CleaningStatus = 'InProgress' WHERE RoomNumber = " + roomNumber;
             string queryString2 =
-                "UPDATE dbo.Room SET[Number] = '" + ActiveNumber + "' WHERE RoomID = " + roomNumber;
+                "UPDATE dbo.Room SET NumberOfCleaners = '" + ActiveNumber + "' WHERE RoomNumber = " + roomNumber;
             using (SqlConnection connection = new SqlConnection(
-                _connectionString))
+                Form1._connectionString))
             {
                 SqlCommand command1 = new SqlCommand(
                     queryString1, connection);

@@ -1,7 +1,9 @@
-﻿using System;
+﻿using MediaFoundation.OPM;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,8 +14,9 @@ namespace HOP
 {
     public partial class Form1 : Form
     {
-        public readonly string _connectionString = "Server=localhost;Database=SoftwareEngineering;Trusted_Connection=True;";
-
+        public static String _connectionString =
+            "Data Source = SQL5047.site4now.net; Initial Catalog = DB_A5088F_HOTELdb; User Id = DB_A5088F_HOTELdb_admin; Password=Prague2019;";
+        
 
         public Form1()
         {

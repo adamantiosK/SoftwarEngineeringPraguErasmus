@@ -42,14 +42,110 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HOP.exe" size="29656">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HOP.exe" size="36824">
       <assemblyIdentity name="HOP" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>3eS7yb6/LzswY+Fw0bKxEHApCxzGITw6Zdz3ZoXBMm4=</dsig:DigestValue>
+        <dsig:DigestValue>FinucqJJbg7Ki7AaoERPjqmHYyEc5puyr6VZd8XMB9Q=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="VisioForge.Controls.dll" size="1860640">
+      <assemblyIdentity name="VisioForge.Controls" version="11.3.2.0" publicKeyToken="5873E863F1BCDA5D" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>Y3jENDKu+We2x04seLT4pNngCuq8N3CUHOW4JQU4JQY=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="VisioForge.Controls.UI.dll" size="264232">
+      <assemblyIdentity name="VisioForge.Controls.UI" version="11.3.2.0" publicKeyToken="EAFA6BD21AA991FD" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>HmrvhOke5nIwjEDMY0/xp8Yo1zwzi3eeyVVI9lUtY/U=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="VisioForge.Controls.UI.Dialogs.dll" size="240160">
+      <assemblyIdentity name="VisioForge.Controls.UI.Dialogs" version="11.3.2.0" publicKeyToken="3D84672DF68C33AC" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>luidy1OhUGdTzm71KGgY86MdyKSRPL+Df7jqQ4jv0ds=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="VisioForge.DirectX.dll" size="1304096">
+      <assemblyIdentity name="VisioForge.DirectX" version="2.6.3.0" publicKeyToken="2F064561F42D5B6A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>Af1cvXSMw38J7/AP8GIHks7nRFNUumwmmgGNGMksFBc=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="VisioForge.MediaFramework.dll" size="2850856">
+      <assemblyIdentity name="VisioForge.MediaFramework" version="11.3.2.0" publicKeyToken="14E66DD726C53F11" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>BSc10rgCClScvkwTW6VGtNE6tLMM5JXqvkxom2309FA=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="VisioForge.Shared.dll" size="6500384">
+      <assemblyIdentity name="VisioForge.Shared" version="11.3.2.0" publicKeyToken="4CB7F6778CAD43A2" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>VEtO7DavxwG2coFB9GBdTGU4+Kvx29opI23t5AfCgV4=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="VisioForge.Tools.dll" size="513576">
+      <assemblyIdentity name="VisioForge.Tools" version="11.3.2.0" publicKeyToken="33C6DED9724DEEC2" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>kQSKLX+rj2bfpIEof74wS3Ssj4qEcskLcFyQAkD6vOE=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="VisioForge.Types.dll" size="273448">
+      <assemblyIdentity name="VisioForge.Types" version="11.3.2.0" publicKeyToken="722DE1C1C0A7F49E" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>nhB2CAcdwDsnTDPOVHUNZaqw07n8xq+UExSFtCBbrWA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

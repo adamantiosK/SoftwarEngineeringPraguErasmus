@@ -37,8 +37,8 @@
             this.KitchenView = new System.Windows.Forms.Button();
             this.logInPage1 = new HOP.LogInPage();
             this.cleaningPanel1 = new HOP.CleaningPanel();
-            this.kitchenPanel1 = new HOP.KitchenPanel();
             this.receptionPanel1 = new HOP.ReceptionPanel();
+            this.kitchenPanel1 = new HOP.KitchenPanel();
             this.MainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -143,14 +143,6 @@
             this.cleaningPanel1.Size = new System.Drawing.Size(1300, 600);
             this.cleaningPanel1.TabIndex = 2;
             // 
-            // kitchenPanel1
-            // 
-            this.kitchenPanel1.BackColor = System.Drawing.Color.Teal;
-            this.kitchenPanel1.Location = new System.Drawing.Point(1, 52);
-            this.kitchenPanel1.Name = "kitchenPanel1";
-            this.kitchenPanel1.Size = new System.Drawing.Size(1300, 600);
-            this.kitchenPanel1.TabIndex = 9;
-            // 
             // receptionPanel1
             // 
             this.receptionPanel1.BackColor = System.Drawing.Color.Teal;
@@ -158,6 +150,14 @@
             this.receptionPanel1.Name = "receptionPanel1";
             this.receptionPanel1.Size = new System.Drawing.Size(1300, 600);
             this.receptionPanel1.TabIndex = 9;
+            // 
+            // kitchenPanel1
+            // 
+            this.kitchenPanel1.BackColor = System.Drawing.Color.Teal;
+            this.kitchenPanel1.Location = new System.Drawing.Point(1, 52);
+            this.kitchenPanel1.Name = "kitchenPanel1";
+            this.kitchenPanel1.Size = new System.Drawing.Size(1300, 600);
+            this.kitchenPanel1.TabIndex = 9;
             // 
             // Form1
             // 

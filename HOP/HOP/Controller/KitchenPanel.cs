@@ -9,13 +9,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using HOP.Model;
+using TagLib.Ape;
 
 namespace HOP
 {
     public partial class KitchenPanel : UserControl
     {
-
-        private readonly string _connectionString = "";
+        private KitchenStaff _cook;
+        private List<KitchenStaff> _cooks = new List<KitchenStaff>();
 
         private Timer timer1;
 
@@ -29,32 +31,38 @@ namespace HOP
         {
             timer1 = new Timer();
             timer1.Tick += new EventHandler(timer1_Tick);
-            timer1.Interval = 60000; // in miliseconds
+            timer1.Interval = 30000; // in miliseconds
             timer1.Start();
         }
 
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            PopulateItems(12);
+            PopulateItems();
         }
 
-        private void PopulateItems(int Amount)
+        private void PopulateItems()
         {
+            List<FoodOrder> orders = GetDataFromDatabase();
+            int amount = orders.Count;
+
             if (flowLayoutPanel1.Controls.Count != 0)
             {
                 flowLayoutPanel1.Controls.Clear();
 
             }
 
-            KitchenOrder[] listitems = new KitchenOrder[Amount];
+            KitchenOrder[] listitems = new KitchenOrder[amount];
 
             for (int i = 0; i < listitems.Length; i++)
             {
                 listitems[i] = new KitchenOrder()
                 {
-                    OrderNumber = (i + 1).ToString(),
-                    OrderDetails = "Eggs with Toast"
+                    OrderNumber = (orders[i].GetOrderID).ToString(),
+                    OrderDetails = orders[i].GetMessage,
+                    RoomNo = (orders[i].GetRoom).ToString(),
+                    Status = orders[i].GetState,
+                    Cooks = _cook.ReturnIDList(_cooks)
                 };
                 if (flowLayoutPanel1.Controls.Count < 0)
                 {
@@ -69,35 +77,58 @@ namespace HOP
             }
         }
 
-        private void GetDataFromDatabase()
+        private List<FoodOrder> GetDataFromDatabase()
         {
-            string queryString =
-                "SELECT Orders , Discription , State FROM dbo.ROOMS;";
+            List<FoodOrder> orders = new List<FoodOrder>();
+
+            string queryString1 =
+                "SELECT TOP(1000)[OrderStatus],[FoodOrderID],[RoomNumber],[Comment]FROM[DB_A5088F_HOTELdb].[dbo].[FoodOrder]WHERE NOT OrderStatus = 'Done'";
+            string queryString2 = "SELECT TOP (1000) [KitchenStaffID] FROM [DB_A5088F_HOTELdb].[dbo].[KitchenStaff]";
+
             using (SqlConnection connection = new SqlConnection(
-                _connectionString))
+                Form1._connectionString))
             {
-                SqlCommand command = new SqlCommand(
-                    queryString, connection);
+                SqlCommand command1 = new SqlCommand(
+                    queryString1, connection);
+                SqlCommand command2 = new SqlCommand(
+                    queryString2, connection);
                 connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
+                SqlDataReader reader1 = command1.ExecuteReader();
+                
                 try
                 {
-                    while (reader.Read())
+                    while (reader1.Read())
                     {
-                        //Retrives only information for Orders either not done or in progress of the day;
+                        string State = (Convert.ToString(reader1[0]));
+                        int OrderID = (Convert.ToInt32(reader1[1]));
+                        int RoomNumber = (Convert.ToInt32(reader1[2]));
+                        string Discription = (Convert.ToString(reader1[3]));
 
-                        //  String that holds Order Number(Convert.ToStrint(reader[0]));
-                        //  String that holds services to be done(Convert.ToStrint(reader[1]));
-                        //in case int is >0 than turn state ( color ) to in progress 
-                        //  String that returns int of people working on the application(Convert.ToStrint(reader[2]));
+                        FoodOrder order1 = new FoodOrder(State, OrderID,Discription,RoomNumber);
+                        orders.Add(order1);
                     }
                 }
                 finally
                 {
-                    reader.Close();
+                    reader1.Close();
+                }
+
+                SqlDataReader reader2 = command2.ExecuteReader();
+                try
+                {
+                    while (reader2.Read())
+                    {
+                        _cook = new KitchenStaff(Convert.ToInt16(reader2[0]));
+                        _cooks.Add(_cook);
+                    }
+                }
+                finally
+                {
+                    reader2.Close();
                 }
                 connection.Close();
             }
+            return orders;
         }
         private void RefreshRooms_Click(object sender, EventArgs e)
         {

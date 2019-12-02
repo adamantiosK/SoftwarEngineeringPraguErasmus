@@ -57,7 +57,7 @@
             this.KitchenLive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.KitchenLive.Location = new System.Drawing.Point(0, -1);
             this.KitchenLive.Name = "KitchenLive";
-            this.KitchenLive.Size = new System.Drawing.Size(164, 27);
+            this.KitchenLive.Size = new System.Drawing.Size(1300, 27);
             this.KitchenLive.TabIndex = 3;
             this.KitchenLive.Text = "Kitchen Live";
             this.KitchenLive.UseVisualStyleBackColor = false;

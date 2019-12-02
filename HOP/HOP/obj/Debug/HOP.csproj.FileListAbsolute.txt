@@ -41,3 +41,12 @@ C:\Users\Adam's MSI\Desktop\Prague CVUT\CVUT Classes\Software Engineering\Protot
 C:\Users\Adam's MSI\Desktop\Prague CVUT\CVUT Classes\Software Engineering\Prototype\HOP\HOP\bin\Debug\HOP.application
 C:\Users\Adam's MSI\Desktop\Prague CVUT\CVUT Classes\Software Engineering\Prototype\HOP\HOP\obj\Debug\HOP.exe.manifest
 C:\Users\Adam's MSI\Desktop\Prague CVUT\CVUT Classes\Software Engineering\Prototype\HOP\HOP\obj\Debug\HOP.application
+C:\Users\Adam's MSI\Desktop\Prague CVUT\CVUT Classes\Software Engineering\Prototype\HOP\HOP\bin\Debug\VisioForge.Controls.dll
+C:\Users\Adam's MSI\Desktop\Prague CVUT\CVUT Classes\Software Engineering\Prototype\HOP\HOP\bin\Debug\VisioForge.Controls.UI.Dialogs.dll
+C:\Users\Adam's MSI\Desktop\Prague CVUT\CVUT Classes\Software Engineering\Prototype\HOP\HOP\bin\Debug\VisioForge.Controls.UI.dll
+C:\Users\Adam's MSI\Desktop\Prague CVUT\CVUT Classes\Software Engineering\Prototype\HOP\HOP\bin\Debug\VisioForge.DirectX.dll
+C:\Users\Adam's MSI\Desktop\Prague CVUT\CVUT Classes\Software Engineering\Prototype\HOP\HOP\bin\Debug\VisioForge.MediaFramework.dll
+C:\Users\Adam's MSI\Desktop\Prague CVUT\CVUT Classes\Software Engineering\Prototype\HOP\HOP\bin\Debug\VisioForge.Shared.dll
+C:\Users\Adam's MSI\Desktop\Prague CVUT\CVUT Classes\Software Engineering\Prototype\HOP\HOP\bin\Debug\VisioForge.Tools.dll
+C:\Users\Adam's MSI\Desktop\Prague CVUT\CVUT Classes\Software Engineering\Prototype\HOP\HOP\bin\Debug\VisioForge.Types.dll
+C:\Users\Adam's MSI\Desktop\Prague CVUT\CVUT Classes\Software Engineering\Prototype\HOP\HOP\obj\Debug\HOP.csproj.CopyComplete

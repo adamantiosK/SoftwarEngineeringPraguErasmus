@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29318.209
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HOP", "HOP\HOP.csproj", "{4AD3AD97-CB00-4D84-97E0-6808F4EA724F}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "HOPInstaller", "HOPInstaller\HOPInstaller.vdproj", "{CE404742-FF35-4F97-89DC-2B4302E96D7E}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "HOPinstall", "HOPinstall\HOPinstall.vdproj", "{A47096A3-FDF4-4365-956A-2614CC65F462}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,8 +17,8 @@ Global
 		{4AD3AD97-CB00-4D84-97E0-6808F4EA724F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4AD3AD97-CB00-4D84-97E0-6808F4EA724F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4AD3AD97-CB00-4D84-97E0-6808F4EA724F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CE404742-FF35-4F97-89DC-2B4302E96D7E}.Debug|Any CPU.ActiveCfg = Debug
-		{CE404742-FF35-4F97-89DC-2B4302E96D7E}.Release|Any CPU.ActiveCfg = Release
+		{A47096A3-FDF4-4365-956A-2614CC65F462}.Debug|Any CPU.ActiveCfg = Debug
+		{A47096A3-FDF4-4365-956A-2614CC65F462}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

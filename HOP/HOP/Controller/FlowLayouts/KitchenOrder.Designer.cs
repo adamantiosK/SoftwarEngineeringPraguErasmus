@@ -30,12 +30,16 @@
         {
             this.DoneBtn = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.WorkerIDtxt = new System.Windows.Forms.TextBox();
             this.OrderLbl = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.NoLbl = new System.Windows.Forms.Label();
             this.Order = new System.Windows.Forms.Label();
+            this.RoomNoLbl = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.messageLbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // DoneBtn
@@ -60,14 +64,15 @@
             this.panel3.Size = new System.Drawing.Size(5, 95);
             this.panel3.TabIndex = 15;
             // 
-            // textBox1
+            // WorkerIDtxt
             // 
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(988, 9);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(242, 34);
-            this.textBox1.TabIndex = 19;
+            this.WorkerIDtxt.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WorkerIDtxt.Location = new System.Drawing.Point(988, 9);
+            this.WorkerIDtxt.Multiline = true;
+            this.WorkerIDtxt.Name = "WorkerIDtxt";
+            this.WorkerIDtxt.PasswordChar = '*';
+            this.WorkerIDtxt.Size = new System.Drawing.Size(242, 34);
+            this.WorkerIDtxt.TabIndex = 19;
             // 
             // OrderLbl
             // 
@@ -122,14 +127,59 @@
             this.Order.TabIndex = 10;
             this.Order.Text = "Order:";
             // 
+            // RoomNoLbl
+            // 
+            this.RoomNoLbl.AutoSize = true;
+            this.RoomNoLbl.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RoomNoLbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.RoomNoLbl.Location = new System.Drawing.Point(865, 46);
+            this.RoomNoLbl.Name = "RoomNoLbl";
+            this.RoomNoLbl.Size = new System.Drawing.Size(55, 34);
+            this.RoomNoLbl.TabIndex = 23;
+            this.RoomNoLbl.Text = "NO";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label2.Location = new System.Drawing.Point(849, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(94, 34);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "Room:";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Black;
+            this.panel2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel2.Location = new System.Drawing.Point(827, 2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(5, 95);
+            this.panel2.TabIndex = 16;
+            // 
+            // messageLbl
+            // 
+            this.messageLbl.AutoSize = true;
+            this.messageLbl.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.messageLbl.ForeColor = System.Drawing.Color.DarkRed;
+            this.messageLbl.Location = new System.Drawing.Point(658, 9);
+            this.messageLbl.Name = "messageLbl";
+            this.messageLbl.Size = new System.Drawing.Size(0, 23);
+            this.messageLbl.TabIndex = 24;
+            // 
             // KitchenOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
+            this.Controls.Add(this.messageLbl);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.RoomNoLbl);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.DoneBtn);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.WorkerIDtxt);
             this.Controls.Add(this.OrderLbl);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
@@ -146,11 +196,15 @@
 
         private System.Windows.Forms.Button DoneBtn;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox WorkerIDtxt;
         private System.Windows.Forms.Label OrderLbl;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label NoLbl;
         private System.Windows.Forms.Label Order;
+        private System.Windows.Forms.Label RoomNoLbl;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label messageLbl;
     }
 }
