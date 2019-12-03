@@ -117,6 +117,12 @@
     <Compile Include="Controller\FlowLayouts\ReservationLayout.Designer.cs">
       <DependentUpon>ReservationLayout.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controller\FlowLayouts\ResidencyPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controller\FlowLayouts\ResidencyPanel.Designer.cs">
+      <DependentUpon>ResidencyPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controller\SubPanels\Sub\ActiveResidenciesPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -204,6 +210,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controller\FlowLayouts\ReservationLayout.resx">
       <DependentUpon>ReservationLayout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controller\FlowLayouts\ResidencyPanel.resx">
+      <DependentUpon>ResidencyPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controller\SubPanels\Sub\ActiveResidenciesPanel.resx">
       <DependentUpon>ActiveResidenciesPanel.cs</DependentUpon>

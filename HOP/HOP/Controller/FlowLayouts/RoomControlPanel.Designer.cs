@@ -81,7 +81,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(217, 13);
+            this.label3.Location = new System.Drawing.Point(199, 13);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(91, 23);
             this.label3.TabIndex = 3;
@@ -92,7 +92,7 @@
             this.Service1Lbl.AutoSize = true;
             this.Service1Lbl.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Service1Lbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Service1Lbl.Location = new System.Drawing.Point(253, 36);
+            this.Service1Lbl.Location = new System.Drawing.Point(235, 36);
             this.Service1Lbl.Name = "Service1Lbl";
             this.Service1Lbl.Size = new System.Drawing.Size(214, 23);
             this.Service1Lbl.TabIndex = 4;
@@ -103,7 +103,7 @@
             this.Service2Lbl.AutoSize = true;
             this.Service2Lbl.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Service2Lbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Service2Lbl.Location = new System.Drawing.Point(253, 59);
+            this.Service2Lbl.Location = new System.Drawing.Point(235, 59);
             this.Service2Lbl.Name = "Service2Lbl";
             this.Service2Lbl.Size = new System.Drawing.Size(214, 23);
             this.Service2Lbl.TabIndex = 5;
@@ -114,7 +114,7 @@
             this.Service3Lbl.AutoSize = true;
             this.Service3Lbl.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Service3Lbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Service3Lbl.Location = new System.Drawing.Point(253, 82);
+            this.Service3Lbl.Location = new System.Drawing.Point(235, 82);
             this.Service3Lbl.Name = "Service3Lbl";
             this.Service3Lbl.Size = new System.Drawing.Size(214, 23);
             this.Service3Lbl.TabIndex = 6;

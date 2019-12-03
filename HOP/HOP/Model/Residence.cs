@@ -21,5 +21,10 @@ namespace HOP.Model
         }
 
 
+        public void method()
+        {
+          //  _reservation.
+        }
+
     }
 }

@@ -11,12 +11,13 @@ using VisioForge.MediaFramework.deviceio;
 
 namespace HOP.Controller.FlowLayouts
 {
-    public partial class ReservationLayout : UserControl
+    public partial class ResidencyPanel : UserControl
     {
-        public ReservationLayout()
+        public ResidencyPanel()
         {
             InitializeComponent();
         }
+
 
         #region Properties 
         private string _roomNumber;
@@ -24,7 +25,7 @@ namespace HOP.Controller.FlowLayouts
         private Date _CheckOutDate;
         private string _name;
         private string _surname;
-        
+
         public List<String> Cleaners = new List<String>();
 
 
@@ -88,5 +89,6 @@ namespace HOP.Controller.FlowLayouts
         }
 
         #endregion
+
     }
 }

@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using HOP.Model;
+using VisioForge.MediaFramework.deviceio;
+using DateTime = System.DateTime;
 
 namespace HOP
 {
@@ -25,6 +27,10 @@ namespace HOP
         private void PopulateItems()
         {
             List<Room> rooms = GetDataFromDatabase();
+
+            List<Reservation> reservations = GetDataFromDatabase2();
+
+
             int amount = rooms.Count;
             if (flowLayoutPanel1.Controls.Count != 0)
             {
@@ -38,9 +44,9 @@ namespace HOP
                 listItems[i] = new RoomControlPanel
                 {
                     RoomNumber = rooms[i].GetRoomID,
-                    Services1 = "Towel Change",
-                    Services2 = "Sheets Change",
-                    Services3 = "Clean Up",
+                    Services1 = GetService3(reservations[i].EndOfReservation),
+                    Services2 = GetService2(reservations[i].StartOfReservation),
+                    Services3 = GetService1(reservations[i].StartOfReservation),
                     Status = rooms[i].GetState,
                     NumberWorking = rooms[i].GetNumber,
                     Cleaners = _cleaner.ReturnIDList(_cleaners)
@@ -58,14 +64,57 @@ namespace HOP
             }
         }
 
+        private string GetService1(DateTime Start)
+        {
+            String record = "";
+            DateTime NOW = DateTime.Now;
+            TimeSpan difference = NOW - Start;
+
+            if (difference.Days % 3 == 0 && difference.Days%4 == 0)
+            {
+                record = "Towel Change";
+              
+            }
+            return record;
+        }
+
+        private string GetService2(DateTime Start)
+        {
+            String record = "";
+            DateTime NOW = DateTime.Now;
+            TimeSpan difference = NOW - Start;
+            if (difference.Days % 4 == 0)
+            {
+                record = "Change Sheets";
+            }else if (difference.Days % 3 == 0)
+            {
+                record = "Towel Change";
+            }
+
+            return record;
+        }
+
+        private string GetService3(DateTime Stop)
+        {
+            String record = "Clean Up";
+            DateTime NOW = DateTime.Now;
+            TimeSpan difference = NOW - Stop;
+            if (difference.Days == 0)
+            {
+                record = "Check Out Clean Up";
+            }
+            return record;
+        }
+
 
         private List<Room> GetDataFromDatabase()
         {
             List<Room> rooms = new List<Room>();
 
             string queryString1 =
-                "SELECT TOP(1000) RoomNumber , CleaningStatus , NumberOfCleaners FROM Room WHERE CleaningStatus = 'notdone' OR CleaningStatus = 'InProgress'";
+                "SELECT RoomNumber , CleaningStatus , NumberOfCleaners FROM Room WHERE RoomNumber IN (SELECT RoomNumber FROM ReservationOfRoomR WHERE ReservationID IN (SELECT ReservationID FROM Reservation  WHERE GETDATE() > StartOfReservation AND GETDATE() < EndOfReservation AND ReservationID IN(SELECT ReservationID FROM Residence)))";
             string queryString2 = "SELECT TOP(1000) [CleaningStaffID] FROM[DB_A5088F_HOTELdb].[dbo].[CleaningStaff]";
+
 
             using (SqlConnection connection = new SqlConnection(
                 Form1._connectionString))
@@ -74,6 +123,7 @@ namespace HOP
                     queryString1, connection);
                 SqlCommand command2 = new SqlCommand(
                     queryString2, connection);
+           
                 connection.Open();
                 SqlDataReader reader1 = command1.ExecuteReader();
                 
@@ -108,13 +158,47 @@ namespace HOP
                 {
                     reader2.Close();
                 }
-
                 connection.Close();
             }
             return rooms;
         }
 
+        private List<Reservation> GetDataFromDatabase2()
+        {
+            List<Reservation> reservations = new List<Reservation>();
 
+           
+            string queryString3 = "SELECT StartOfReservation , EndOfReservation FROM Reservation WHERE GETDATE() >= StartOfReservation AND GETDATE() <= EndOfReservation AND ReservationID IN(SELECT ReservationID	 FROM Residence)";
+
+            using (SqlConnection connection = new SqlConnection(
+                Form1._connectionString))
+            {
+
+                SqlCommand command3 = new SqlCommand(
+                    queryString3, connection);
+
+                connection.Open();
+                SqlDataReader reader3 = command3.ExecuteReader();
+                try
+                {
+                    while (reader3.Read())
+                    {
+                        DateTime CheckIn = Convert.ToDateTime((Convert.ToString(reader3[0])));
+                        DateTime CheckOut = Convert.ToDateTime((Convert.ToString(reader3[1])));
+                        Reservation reservation1 = new Reservation(CheckIn,CheckOut );
+                        reservations.Add(reservation1);
+                    }
+                }
+                finally
+                {
+                    reader3.Close();
+                }
+
+                connection.Close();
+            }
+
+            return reservations;
+        }
 
         private void RefreshRooms_Click(object sender, EventArgs e)
         {

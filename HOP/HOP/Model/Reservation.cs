@@ -4,14 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VisioForge.MediaFramework.deviceio;
+using DateTime = System.DateTime;
 
 namespace HOP.Model
 {
     class Reservation
     {
 
-        private Date _endOfReservation;
-        private Date _startOfReservation;
+        private DateTime _endOfReservation;
+        private DateTime _startOfReservation;
         private String _state;
         private int _capacity;
 
@@ -21,24 +22,21 @@ namespace HOP.Model
 
 
 
-        public Reservation(Customer customer, Date EndOfReservation,Date StartOfReservation,String State,int capacity)
+        public Reservation(DateTime StartOfReservation, DateTime EndOfReservation)
         {
-            this._state = State;
             this._endOfReservation = EndOfReservation;
             this._startOfReservation = StartOfReservation;
-            this._capacity = capacity;
-            this._customer = customer;
         }
 
 
-        public Date EndOfReservation
+        public DateTime EndOfReservation
         {
             get { return _endOfReservation; }   // get method
             set { _endOfReservation = value; }  // set method
         }
 
 
-        public Date StartOfReservation
+        public DateTime StartOfReservation
         {
             get { return _startOfReservation; }   // get method
             set { _startOfReservation = value; }  // set method

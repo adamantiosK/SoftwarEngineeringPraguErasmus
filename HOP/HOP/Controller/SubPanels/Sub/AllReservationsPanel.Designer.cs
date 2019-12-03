@@ -28,13 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.AllReservationFlow = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
+            // 
+            // AllReservationFlow
+            // 
+            this.AllReservationFlow.Location = new System.Drawing.Point(3, 0);
+            this.AllReservationFlow.Name = "AllReservationFlow";
+            this.AllReservationFlow.Size = new System.Drawing.Size(1297, 540);
+            this.AllReservationFlow.TabIndex = 0;
             // 
             // AllReservationsPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
+            this.Controls.Add(this.AllReservationFlow);
             this.Name = "AllReservationsPanel";
             this.Size = new System.Drawing.Size(1300, 540);
             this.ResumeLayout(false);
@@ -42,5 +51,7 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.FlowLayoutPanel AllReservationFlow;
     }
 }
