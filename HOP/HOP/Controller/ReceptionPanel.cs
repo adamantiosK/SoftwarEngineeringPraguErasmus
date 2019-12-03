@@ -16,5 +16,28 @@ namespace HOP
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            makeAReservation1.BringToFront();
+            viewReservations1.SendToBack();
+            logInPage1.SendToBack();
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            viewReservations1.BringToFront();
+            makeAReservation1.SendToBack();
+            logInPage1.SendToBack();
+        }
+
+        private void Loginout_Click(object sender, EventArgs e)
+        {
+            logInPage1.BringToFront();
+            makeAReservation1.SendToBack();
+            viewReservations1.SendToBack();
+
+        }
     }
 }

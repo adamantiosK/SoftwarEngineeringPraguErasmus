@@ -47,6 +47,7 @@
             this.DoneBtn.BackColor = System.Drawing.Color.MediumSpringGreen;
             this.DoneBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DoneBtn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DoneBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.DoneBtn.Location = new System.Drawing.Point(988, 49);
             this.DoneBtn.Name = "DoneBtn";
             this.DoneBtn.Size = new System.Drawing.Size(242, 34);

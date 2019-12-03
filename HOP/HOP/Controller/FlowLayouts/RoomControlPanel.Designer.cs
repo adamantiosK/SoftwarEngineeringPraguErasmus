@@ -144,6 +144,7 @@
             this.JoinRoomBtn.BackColor = System.Drawing.Color.Aquamarine;
             this.JoinRoomBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.JoinRoomBtn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.JoinRoomBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.JoinRoomBtn.Location = new System.Drawing.Point(717, 52);
             this.JoinRoomBtn.Name = "JoinRoomBtn";
             this.JoinRoomBtn.Size = new System.Drawing.Size(215, 34);
@@ -166,6 +167,7 @@
             this.DoneBtn.BackColor = System.Drawing.Color.Aquamarine;
             this.DoneBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DoneBtn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DoneBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.DoneBtn.Location = new System.Drawing.Point(991, 13);
             this.DoneBtn.Name = "DoneBtn";
             this.DoneBtn.Size = new System.Drawing.Size(242, 73);

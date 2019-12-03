@@ -22,7 +22,6 @@ namespace HOP.Model
             for (int i = 0; i < cooks.Count; i++)
             {
                 IDS.Add((cooks[i]._kitchenstaffID).ToString());
-                Console.WriteLine(cooks[i]._kitchenstaffID);
             }
             return IDS;
         }
