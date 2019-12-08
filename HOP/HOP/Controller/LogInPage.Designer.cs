@@ -56,9 +56,9 @@
             this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label5.Location = new System.Drawing.Point(508, 237);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(502, 109);
+            this.label5.Size = new System.Drawing.Size(486, 109);
             this.label5.TabIndex = 11;
-            this.label5.Text = "ptimazation";
+            this.label5.Text = "ptimization";
             // 
             // label4
             // 

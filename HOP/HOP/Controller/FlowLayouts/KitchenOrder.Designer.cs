@@ -31,7 +31,6 @@
             this.DoneBtn = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.WorkerIDtxt = new System.Windows.Forms.TextBox();
-            this.OrderLbl = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.NoLbl = new System.Windows.Forms.Label();
@@ -40,6 +39,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.messageLbl = new System.Windows.Forms.Label();
+            this.OrderLbl = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // DoneBtn
@@ -74,17 +74,6 @@
             this.WorkerIDtxt.PasswordChar = '*';
             this.WorkerIDtxt.Size = new System.Drawing.Size(242, 34);
             this.WorkerIDtxt.TabIndex = 19;
-            // 
-            // OrderLbl
-            // 
-            this.OrderLbl.AutoSize = true;
-            this.OrderLbl.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OrderLbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.OrderLbl.Location = new System.Drawing.Point(218, 26);
-            this.OrderLbl.Name = "OrderLbl";
-            this.OrderLbl.Size = new System.Drawing.Size(106, 23);
-            this.OrderLbl.TabIndex = 16;
-            this.OrderLbl.Text = "- One Meal";
             // 
             // label3
             // 
@@ -169,11 +158,26 @@
             this.messageLbl.Size = new System.Drawing.Size(0, 23);
             this.messageLbl.TabIndex = 24;
             // 
+            // OrderLbl
+            // 
+            this.OrderLbl.BackColor = System.Drawing.Color.Teal;
+            this.OrderLbl.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.OrderLbl.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OrderLbl.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.OrderLbl.Location = new System.Drawing.Point(190, 29);
+            this.OrderLbl.Multiline = true;
+            this.OrderLbl.Name = "OrderLbl";
+            this.OrderLbl.ReadOnly = true;
+            this.OrderLbl.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.OrderLbl.Size = new System.Drawing.Size(617, 60);
+            this.OrderLbl.TabIndex = 25;
+            // 
             // KitchenOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
+            this.Controls.Add(this.OrderLbl);
             this.Controls.Add(this.messageLbl);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.RoomNoLbl);
@@ -181,7 +185,6 @@
             this.Controls.Add(this.DoneBtn);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.WorkerIDtxt);
-            this.Controls.Add(this.OrderLbl);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.NoLbl);
@@ -198,7 +201,6 @@
         private System.Windows.Forms.Button DoneBtn;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox WorkerIDtxt;
-        private System.Windows.Forms.Label OrderLbl;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label NoLbl;
@@ -207,5 +209,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label messageLbl;
+        private System.Windows.Forms.TextBox OrderLbl;
     }
 }

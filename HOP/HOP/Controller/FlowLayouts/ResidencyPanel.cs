@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VisioForge.MediaFramework.deviceio;
+using DateTime = System.DateTime;
 
 namespace HOP.Controller.FlowLayouts
 {
@@ -21,8 +22,8 @@ namespace HOP.Controller.FlowLayouts
 
         #region Properties 
         private string _roomNumber;
-        private Date _CheckInDate;
-        private Date _CheckOutDate;
+        private DateTime _CheckInDate;
+        private DateTime _CheckOutDate;
         private string _name;
         private string _surname;
 
@@ -42,7 +43,7 @@ namespace HOP.Controller.FlowLayouts
         }
 
         [Category("Custom Props")]
-        public Date CheckInDate
+        public DateTime CheckInDate
         {
             get { return _CheckInDate; }
             set
@@ -54,7 +55,7 @@ namespace HOP.Controller.FlowLayouts
 
 
         [Category("Custom Props")]
-        public Date CheckOutDate
+        public DateTime CheckOutDate
         {
             get { return _CheckOutDate; }
             set

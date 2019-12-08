@@ -35,6 +35,7 @@
             this.logInPage1 = new HOP.LogInPage();
             this.viewReservations1 = new HOP.Controller.SubPanels.ViewReservations();
             this.makeAReservation1 = new HOP.Controller.SubPanels.MakeAReservation();
+            this.makeReservationTemporary1 = new HOP.MakeReservationTemporary();
             this.SuspendLayout();
             // 
             // button1
@@ -45,7 +46,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(500, 30);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Make a Reservation";
+            this.button1.Text = "Make a Order";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -105,11 +106,20 @@
             this.makeAReservation1.Size = new System.Drawing.Size(1300, 570);
             this.makeAReservation1.TabIndex = 4;
             // 
+            // makeReservationTemporary1
+            // 
+            this.makeReservationTemporary1.BackColor = System.Drawing.Color.Teal;
+            this.makeReservationTemporary1.Location = new System.Drawing.Point(0, 27);
+            this.makeReservationTemporary1.Name = "makeReservationTemporary1";
+            this.makeReservationTemporary1.Size = new System.Drawing.Size(1300, 570);
+            this.makeReservationTemporary1.TabIndex = 7;
+            // 
             // ReceptionPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
+            this.Controls.Add(this.makeReservationTemporary1);
             this.Controls.Add(this.logInPage1);
             this.Controls.Add(this.viewReservations1);
             this.Controls.Add(this.makeAReservation1);
@@ -133,5 +143,6 @@
         private Controller.SubPanels.MakeAReservation makeAReservation1;
         private Controller.SubPanels.ViewReservations viewReservations1;
         private LogInPage logInPage1;
+        private MakeReservationTemporary makeReservationTemporary1;
     }
 }

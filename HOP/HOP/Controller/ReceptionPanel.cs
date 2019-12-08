@@ -17,9 +17,16 @@ namespace HOP
             InitializeComponent();
         }
 
+
+        // 
+        // All the methods are resposible for bring the apropriate panels in front of the VIEW
+        //
+
+
         private void button1_Click(object sender, EventArgs e)
         {
-            makeAReservation1.BringToFront();
+            makeReservationTemporary1.BringToFront();
+            makeAReservation1.SendToBack();
             viewReservations1.SendToBack();
             logInPage1.SendToBack();
 
@@ -30,6 +37,8 @@ namespace HOP
             viewReservations1.BringToFront();
             makeAReservation1.SendToBack();
             logInPage1.SendToBack();
+
+            makeReservationTemporary1.SendToBack();
         }
 
         private void Loginout_Click(object sender, EventArgs e)
@@ -37,6 +46,8 @@ namespace HOP
             logInPage1.BringToFront();
             makeAReservation1.SendToBack();
             viewReservations1.SendToBack();
+
+            makeReservationTemporary1.SendToBack();
 
         }
     }

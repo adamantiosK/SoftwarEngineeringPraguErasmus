@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HOP.exe" size="48600">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HOP.exe" size="56792">
       <assemblyIdentity name="HOP" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>IFtVLHihgJeJYJBeIoqDo9RKdlM3havrOSsoB0mlr5Y=</dsig:DigestValue>
+        <dsig:DigestValue>+CfBS9MFsiC74XIKQDkjlU4RLQBBErQfoKp3GR7Tpl8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -149,13 +149,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="HOP.exe.config" size="189">
+  <file name="HOP.exe.config" size="505">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>R+Wg8QGvQVHX8T0ta/qbhH1bXkqY0fRnS3wBV3J0bN8=</dsig:DigestValue>
+      <dsig:DigestValue>saYCp5DS0ss5cQXjkuenED5Kg6YUvsrD4RA7dFV/BQ4=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

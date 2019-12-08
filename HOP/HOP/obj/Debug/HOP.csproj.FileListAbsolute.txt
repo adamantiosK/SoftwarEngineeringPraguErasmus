@@ -57,3 +57,4 @@ C:\Users\Adam's MSI\Desktop\Prague CVUT\CVUT Classes\Software Engineering\Protot
 C:\Users\Adam's MSI\Desktop\Prague CVUT\CVUT Classes\Software Engineering\Prototype\HOP\HOP\obj\Debug\HOP.Controller.FlowLayouts.MakeOrder.resources
 C:\Users\Adam's MSI\Desktop\Prague CVUT\CVUT Classes\Software Engineering\Prototype\HOP\HOP\obj\Debug\HOP.Controller.FlowLayouts.ReservationLayout.resources
 C:\Users\Adam's MSI\Desktop\Prague CVUT\CVUT Classes\Software Engineering\Prototype\HOP\HOP\obj\Debug\HOP.Controller.FlowLayouts.ResidencyPanel.resources
+C:\Users\Adam's MSI\Desktop\Prague CVUT\CVUT Classes\Software Engineering\Prototype\HOP\HOP\obj\Debug\HOP.MakeReservationTemporary.resources

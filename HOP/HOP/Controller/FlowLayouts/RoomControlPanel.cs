@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Diagnostics.Eventing.Reader;
+using HOP.Data.DAO;
 
 namespace HOP
 {
@@ -100,6 +101,8 @@ namespace HOP
 
         #endregion
 
+
+
         private void JoinRoomBtn_Click(object sender, EventArgs e)
         {
 
@@ -120,7 +123,7 @@ namespace HOP
                     // parse data that room is in progress into database at information of who made it in progress using the workerid string  
                     int no = int.Parse(ActiveNumberLbl.Text);
                     ActiveNumberLbl.Text = (no + 1).ToString();
-                    ParseToDatabaseForInProgress(ActiveNumberLbl.Text, NoLbl.Text);
+                    RoomsDAO.SetCleaningStatusToInProgress(ActiveNumberLbl.Text, NoLbl.Text);
                     this.BackColor = Color.Yellow;
                    
                 }
@@ -142,10 +145,7 @@ namespace HOP
                 {
                     return true;
                 }
-                //Check if id exists in database or string array that loads at the begining 
             }
-            
-
             return false;
         }
 
@@ -166,53 +166,15 @@ namespace HOP
                     String workerId = WorkerIdTxtBox.Text;
                     WorkerIdTxtBox.Text = "";
 
-                    // parse data that room is done into database and information of who made it in progress using the workerid string 
                     this.BackColor = Color.Green;
 
-                    ParseToDatabaseForDone( NoLbl.Text);
+                    RoomsDAO.SetCleaningStatusToDone( NoLbl.Text);
                 }
                 else
                 {
                     WorkerIdTxtBox.Text = "";
                     messageLbl.Text = "Error occurred";
                 }
-            }
-        }
-
-        private void ParseToDatabaseForDone(string roomNumber)
-        {
-            string queryString =
-                "UPDATE dbo.Room SET CleaningStatus = 'DONE' WHERE RoomNumber = " + roomNumber;
-            using (SqlConnection connection = new SqlConnection(
-                Form1._connectionString))
-            {
-                SqlCommand command = new SqlCommand(
-                    queryString, connection);
-                connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
-                connection.Close();
-            }
-        }
-
-        private void ParseToDatabaseForInProgress(string ActiveNumber, string roomNumber)
-        {
-            string queryString1 =
-                "UPDATE dbo.Room SET CleaningStatus = 'InProgress' WHERE RoomNumber = " + roomNumber;
-            string queryString2 =
-                "UPDATE dbo.Room SET NumberOfCleaners = '" + ActiveNumber + "' WHERE RoomNumber = " + roomNumber;
-            using (SqlConnection connection = new SqlConnection(
-                Form1._connectionString))
-            {
-                SqlCommand command1 = new SqlCommand(
-                    queryString1, connection);
-                SqlCommand command2 = new SqlCommand(
-                    queryString2, connection);
-                connection.Open();
-                SqlDataReader reader1 = command1.ExecuteReader();
-                reader1.Close();
-                SqlDataReader reader2 = command2.ExecuteReader();
-                reader2.Close();
-                connection.Close();
             }
         }
     }

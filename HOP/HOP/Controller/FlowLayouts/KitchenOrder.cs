@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using HOP.Data.DAO;
 
 namespace HOP
 {
@@ -50,10 +51,11 @@ namespace HOP
                 {
                     this.BackColor = Color.Yellow;
                     DoneBtn.BackColor = Color.Gold;
+                    OrderLbl.BackColor = Color.Yellow;
                 }
 
             }
-        }
+        } 
 
         [Category("Custom Props")]
         public string OrderDetails
@@ -81,6 +83,7 @@ namespace HOP
         #endregion
 
 
+        //Checks if the ID given is a Worker and send back a boolean
         private bool IsWorker(String id)
         {
             for (int i = 0; i < Cooks.Count; i++)
@@ -95,6 +98,9 @@ namespace HOP
 
             return false;
         }
+
+
+        // Function that based on the Status of Order changes to the Appropriate color and parses to database 
 
         private void DoneBtn_Click_1(object sender, EventArgs e)
         {
@@ -115,10 +121,11 @@ namespace HOP
 
                         this.BackColor = Color.Green;
 
-                        ParseToDatabaseForDone(NoLbl.Text);
+                        FoodOrderDAO.SetOrderStatusToDone(NoLbl.Text);
 
                         this.BackColor = Color.Green;
                         DoneBtn.BackColor = Color.MediumSpringGreen;
+                        OrderLbl.BackColor = Color.Green;
                     }
                     else
                     {
@@ -138,14 +145,14 @@ namespace HOP
                         WorkerIDtxt.Text = "";
 
 
-                        ParseToDatabaseForInProgress(NoLbl.Text);
+                        FoodOrderDAO.SetOrderStatusToInProgress(NoLbl.Text);
 
 
                         this.BackColor = Color.Yellow;
+                        OrderLbl.BackColor = Color.Yellow;
                         DoneBtn.BackColor = Color.Gold;
                         DoneBtn.Text = "Complete Order";
 
-                        this.BackColor = Color.Yellow;
 
                     }
                     else
@@ -156,42 +163,6 @@ namespace HOP
                     }
                 }
 
-            }
-        }
-
-
-        private void ParseToDatabaseForInProgress( string OrderNo)
-        {
-            string queryString1 =
-                "UPDATE dbo.FoodOrder SET OrderStatus = 'InProgress' WHERE FoodOrderID =" + OrderNo;
-            
-            using (SqlConnection connection = new SqlConnection(
-                Form1._connectionString))
-            {
-                SqlCommand command1 = new SqlCommand(
-                    queryString1, connection);
-            
-                connection.Open();
-                SqlDataReader reader1 = command1.ExecuteReader();
-                reader1.Close();
-               
-                connection.Close();
-            }
-        }
-
-
-        private void ParseToDatabaseForDone(string orderNO)
-        {
-            string queryString =
-                "UPDATE dbo.FoodOrder SET OrderStatus = 'Done' WHERE FoodOrderID =" + orderNO;
-            using (SqlConnection connection = new SqlConnection(
-                Form1._connectionString))
-            {
-                SqlCommand command = new SqlCommand(
-                    queryString, connection);
-                connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
-                connection.Close();
             }
         }
 
